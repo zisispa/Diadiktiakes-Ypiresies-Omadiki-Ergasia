@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Boostap Links 
+    -------------
+    -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- End Boostrap Links -->
+
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <title>SearchAid</title>
+</head>
+
+<body class="bg">
+    <!-- Navbar SECTION -->
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">SearchAid</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Ηome <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home SECTION -->
+
+    <header id="home-section">
+        <div class="dark-overlay">
+            <div class="home-inner container">
+                <div class="row">
+                    <div class="col-lg">
+                        <h1 class="display-4 text-white"> Κάνε αναζήτηση το <strong class="text-dark">προϊόν</strong>
+                            που επιθυμείς και
+                            την
+                            <strong class="text-dark">τοποθεσία</strong> σου!</h1>
+                        <div class="d-flex">
+                            <div class="p-4 align-self-center">
+                                <p class="text-white">
+                                    To <strong class="text-dark">SearchAid</strong> είναι μια εφαρμογή η οποία σε
+                                    βοηθάει να κάνεις
+                                    αναζήτηση με εύκολο
+                                    τρόπο το προϊόν που θέλεις δίπλα στο σπίτι σου.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center card-form shadow">
+                            <div class="card-body">
+                                <h3 class="text-dark">Επέλεξε</h3>
+                                <hr>
+                                <form action="" class="form-group">
+                                    <div class="form-group">
+                                        <select class="form-control form-control search-slt"
+                                            id="exampleFormControlSelect1">
+                                            <option>Προίον</option>
+                                            <option>Example one</option>
+                                            <option>Example one</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="search_input" class="form-control" type="text"
+                                            placeholder="Δώσε την τοποθεσία σου...">
+                                    </div>
+                                    <a href="main.html" class="btn btn-outline-light btn-block text-dark">Search</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Boostrap Scripts 
+    --------------------
+    -->
+    <script src=" http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <!--End Boostrap Scripts -->
+
+    <!-- JS Script -->
+    <script src="js/index.js"></script>
+
+    <!-- Goodle Maps scripts -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=createMap&libraries=places&key=AIzaSyBofP1jK4vfOQyqqaw7mItm624ehpOb5NY"
+        type="text/javascript"></script>
+</body>
+
+</html>
