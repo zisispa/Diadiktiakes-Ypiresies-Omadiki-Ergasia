@@ -62,131 +62,129 @@
 
 })(jQuery); // End of use strict
 
+
 //Kwdikas gia tn anazitisi tou xarti
+// function createMap() {
+//   var options = {
+//     center: { lat: 40.736851, lng: 22.920227 },
+//     zoom: 10
+//   };
 
-function createMap() {
+//   var map = new google.maps.Map(document.getElementById('map'), options);
 
+//   var input = document.getElementById('searchInput');
+//   var searchBox = new google.maps.places.SearchBox(input);
+
+//   map.addListener('bounds_changed', function () {
+//     searchBox.setBounds(map.getBounds());
+//   });
+
+//   var markers = [];
+
+//   searchBox.addListener('places_changed', function () {
+//     var places = searchBox.getPlaces();
+
+//     if (places.lenght === 0) {
+//       return;
+//     }
+
+//     markers.forEach(function (m) { m.setMap(null) });
+//     markers = [];
+
+//     var bounds = new google.maps.LatLngBounds();
+
+//     places.forEach(function (p) {
+//       if (!p.geometry)
+//         return;
+
+//       markers.push(new google.maps.Marker({
+//         map: map,
+//         title: p.name,
+//         position: p.geometry.location
+//       }));
+
+//       if (p.geometry.viewport)
+//         bounds.union(p.geometry.viewport);
+//       else
+//         bounds.extend(p.geometry.location);
+//     });
+//     map.fitBounds(bounds);
+//   });
+// }
+
+//Markers solution
+
+function initMap() {
+  // Map options
   var options = {
-    center: { lat: 40.583518, lng: 22.960992 },
-    zoom: 10
-  };
+    zoom: 8,
+    center: { lat: 42.3601, lng: -71.0589 }
+  }
 
+  // New map
   var map = new google.maps.Map(document.getElementById('map'), options);
 
-  addMarker({ coords: { lat: 40.583518, lng: 22.960992 } })
+  // Listen for click on map
+  // google.maps.event.addListener(map, 'click', function (event) {
+  //   // Add marker
+  //   addMarker({ coords: event.latLng });
+  // });
 
-  var infoWindow = new google.maps.InfoWindow({
-    content: '<h1>Thessaloniki</h1>'
-  });
-  //Add Marker Function
+  // Array of markers
+  var markers = [
+    {
+      coords: { lat: 42.4668, lng: -70.9495 },
+      iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+      content: '<div id="content">' +
+        '<div id="siteNotice">' +
+        '</div>' +
+        '<h4 id="firstHeading" class="firstHeading">Μασούτης</h4>' +
+        '<div id="bodyContent">' +
+        '<ul><li>Γάλα 10 κ.</li></ul>' +
+        '<ul><li>Αλεύρι 11 κ.</li></ul>' +
+        '<ul><li>Μακαρόνια 15 κ.</li></ul>' +
+        '<ul><li>Μακαρόνια 15 κ.</li></ul>' +
+        '</div>' +
+        '</div>'
+    },
+    {
+      coords: { lat: 42.8584, lng: -70.9300 },
+      content: '<h1>Amesbury MA</h1>'
+    },
+    {
+      coords: { lat: 42.7762, lng: -71.0773 }
+    }
+  ];
+
+  // Loop through markers
+  for (var i = 0; i < markers.length; i++) {
+    // Add marker
+    addMarker(markers[i]);
+  }
+
+  // Add Marker Function
   function addMarker(props) {
     var marker = new google.maps.Marker({
       position: props.coords,
-      map: map
+      map: map,
+      //icon:props.iconImage
     });
 
+    // Check for customicon
     if (props.iconImage) {
+      // Set icon image
       marker.setIcon(props.iconImage);
     }
 
+    // Check content
+    if (props.content) {
+      var infoWindow = new google.maps.InfoWindow({
+        content: props.content
+      });
 
+      marker.addListener('click', function () {
+        infoWindow.open(map, marker);
+      });
+    }
   }
-
-
-
-
-
-
-  marker.addListener('click', function () {
-    infoWindow.open(map, marker);
-  });
-
 }
-
-
-  // var input = document.getElementById('search');
-  // var searchBox = new google.maps.places.SearchBox(input);
-
-  // map.addListener('bounds_changed', function () {
-  //   searchBox.setBounds(map.getBounds());
-  // });
-
-  // var markers = [];
-
-  // searchBox.addListener('places_changed', function () {
-  //   var places = searchBox.getPlaces();
-
-  //   if (places.lenght === 0) {
-  //     return;
-  //   }
-
-  //   markers.forEach(function (m) { m.setMap(null) });
-  //   markers = [];
-
-  //   var bounds = new google.maps.LatLngBounds();
-
-  //   places.forEach(function (p) {
-  //     if (!p.geometry)
-  //       return;
-
-  //     markers.push(new google.maps.Marker({
-  //       map: map,
-  //       title: p.name,
-  //       position: p.geometry.location
-  //     }));
-
-  //     if (p.geometry.viewport)
-  //       bounds.union(p.geometry.viewport);
-  //     else
-  //       bounds.extend(p.geometry.location);
-  //   });
-  //   map.fitBounds(bounds);
-  // });
-
-
-
-
-// addMarker({ coords: { lat: 40.583518, lng: 22.960992 } });
-
-// function addMarker(coords) {
-//   var marker = new google.maps.Marker({
-//     position: props.coords,
-//     map: map,
-//     title: 'Hello World!'
-//   });
-
-//   if (props.iconImage) {
-//     marker.setIcon(props.iconImage);
-//   }
-
-////Kwdikas gia na emfanizei kateuthian tn topothesia tou xristi
-////////
-///////
-
-// var infoWindow;
-// infoWindow = new google.maps.InfoWindow;
-
-// if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(
-//         function (p) {
-//             var position = {
-//                 lat: p.coords.latitude,
-//                 lng: p.coords.longitude
-//             };
-//             infoWindow.setPosition(position);
-//             infoWindow.setContent("Your location!");
-//             infoWindow.open(map);
-//         },
-//         function () {
-//             handleLocationError("Gelolaction service failed", map.center());
-//         }
-//     );
-// } else {
-//     handleLocationError("No geolocation available", map.center());
-// }
-
-// function handleLocationError(content, position) {
-//     infoWindow.setPosition(position);
-//     infoWindow.setContent(content);
-//     infoWindow.open(map);
-// }
