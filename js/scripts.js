@@ -1,8 +1,3 @@
-/*!
-    * Start Bootstrap - Creative v6.0.0 (https://startbootstrap.com/themes/creative)
-    * Copyright 2013-2020 Start Bootstrap
-    * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
-    */
 (function ($) {
   "use strict"; // Start of use strict
 
@@ -62,99 +57,40 @@
 
 })(jQuery); // End of use strict
 
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////
 
-//Kwdikas gia tn anazitisi tou xarti
-// function createMap() {
-//   var options = {
-//     center: { lat: 40.736851, lng: 22.920227 },
-//     zoom: 10
-//   };
+//Προιοντα πρωτης αναγκης
+// //αλευρι
+// νερο
+// ζυμαρικα
+// γαλα
+// αντισειπτικα
+// μασκες
+// γαντια
+// χαρτι υγειας
+// λαδι
+// οινοπνευμα
 
-//   var map = new google.maps.Map(document.getElementById('map'), options);
-
-//   var input = document.getElementById('searchInput');
-//   var searchBox = new google.maps.places.SearchBox(input);
-
-//   map.addListener('bounds_changed', function () {
-//     searchBox.setBounds(map.getBounds());
-//   });
-
-//   var markers = [];
-
-//   searchBox.addListener('places_changed', function () {
-//     var places = searchBox.getPlaces();
-
-//     if (places.lenght === 0) {
-//       return;
-//     }
-
-//     markers.forEach(function (m) { m.setMap(null) });
-//     markers = [];
-
-//     var bounds = new google.maps.LatLngBounds();
-
-//     places.forEach(function (p) {
-//       if (!p.geometry)
-//         return;
-
-//       markers.push(new google.maps.Marker({
-//         map: map,
-//         title: p.name,
-//         position: p.geometry.location
-//       }));
-
-//       if (p.geometry.viewport)
-//         bounds.union(p.geometry.viewport);
-//       else
-//         bounds.extend(p.geometry.location);
-//     });
-//     map.fitBounds(bounds);
-//   });
-// }
-
+var btn = document.getElementById('btnSearch');
+var option = document.getElementById('selectProduct').value;
+var supermarketName, productName, productQuantity, livePerson;
 //Markers solution
 
 function initMap() {
   // Map options
   var options = {
-    zoom: 8,
-    center: { lat: 42.3601, lng: -71.0589 }
+    zoom: 15,
+    center: { lat: 40.5853602, lng: 22.9577405 }
   }
 
   // New map
   var map = new google.maps.Map(document.getElementById('map'), options);
 
-  // Listen for click on map
-  // google.maps.event.addListener(map, 'click', function (event) {
-  //   // Add marker
-  //   addMarker({ coords: event.latLng });
-  // });
-
+  var foods = [];
   // Array of markers
-  var markers = [
-    {
-      coords: { lat: 42.4668, lng: -70.9495 },
-      iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-      content: '<div id="content">' +
-        '<div id="siteNotice">' +
-        '</div>' +
-        '<h4 id="firstHeading" class="firstHeading">Μασούτης</h4>' +
-        '<div id="bodyContent">' +
-        '<ul><li>Γάλα 10 κ.</li></ul>' +
-        '<ul><li>Αλεύρι 11 κ.</li></ul>' +
-        '<ul><li>Μακαρόνια 15 κ.</li></ul>' +
-        '<ul><li>Μακαρόνια 15 κ.</li></ul>' +
-        '</div>' +
-        '</div>'
-    },
-    {
-      coords: { lat: 42.8584, lng: -70.9300 },
-      content: '<h1>Amesbury MA</h1>'
-    },
-    {
-      coords: { lat: 42.7762, lng: -71.0773 }
-    }
-  ];
+  var markers = checkProduct();
 
   // Loop through markers
   for (var i = 0; i < markers.length; i++) {
@@ -167,7 +103,7 @@ function initMap() {
     var marker = new google.maps.Marker({
       position: props.coords,
       map: map,
-      //icon:props.iconImage
+      animation: google.maps.Animation.DROP
     });
 
     // Check for customicon
@@ -188,3 +124,122 @@ function initMap() {
     }
   }
 }
+
+//Functions for Content InfoWindow
+//
+function addConent(supermarketName, productName, productQuantity, livePerson) {
+
+  var content = '<div id="content" onmouseover="alertMessage(' + livePerson + ')">' +
+    '<h4 id="firstHeading" class="firstHeading"> ' + supermarketName + '</h4>' +
+    '<hr>' +
+    '<table>' +
+    '<tr>' +
+    '<th>Προϊόν</th>' +
+    '<th>Ποσότητα</th>' +
+    '</tr>' +
+    '<tr>' +
+    '<td> ' + productName[0] + '</td>' +
+    '<td> ' + productQuantity[0] + ' κιβ.</td>' +
+    '</tr>' +
+    '<tr>' +
+    '<td>' + productName[1] + '</td>' +
+    '<td> ' + productQuantity[1] + ' κιβ.</td>' +
+    '</tr>' +
+    '<tr>' +
+    '<td>' + productName[2] + '</td>' +
+    '<td> ' + productQuantity[2] + ' κιβ.</td>' +
+    '</tr>' +
+    '</table>' +
+    '<div>' +
+    '<hr>' +
+    '<p> <strong style="color:red;">Live</strong>: ' + livePerson + ' επισκέπτες </p>' +
+    '</div>' +
+    '</div>';
+
+  return content;
+}
+
+function alertMessage(livePerson) {
+  if (livePerson >= 40) {
+    alert('Opps, το κατάστημα που επέλεξες φαίνεται να είναι γεμάτο, για την πιο γρήγορη εξυπηρέτηση σου μπορείς να επισκεφτείς κάποιο άλλο κατάστημα!');
+  }
+}
+
+//nero
+// zymarika
+// gala
+// aleuri
+// ladi
+// antiseiptika
+// maskes
+// xarti
+// ygeias
+// oinopneuma
+
+function checkProduct() {
+
+  switch (option) {
+    case 'nero':
+      break;
+    case 'zymarika':
+      break;
+    case 'gala':
+      break;
+    case 'aleuri':
+      break;
+    case 'ladi':
+      break;
+    case 'antiseiptika':
+      break;
+    case 'maskes':
+      break;
+    case 'xarti':
+      break;
+    case 'ygeias':
+      break;
+    case 'oinopneuma':
+      break;
+  }
+
+  var markers = [
+    {
+      coords: { lat: 40.5856899, lng: 22.9588858 },
+      iconImage: '../assets/img/supermarket.png',
+      content: addConent("Lidl", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 40)
+    },
+    {
+      coords: { lat: 40.5881467, lng: 22.9596181 },
+      iconImage: '../assets/img/supermarket.png',
+      content: addConent("Σκλαβενίτης", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 10)
+    },
+    {
+      coords: { lat: 40.5882771, lng: 22.9534168 },
+      iconImage: '../assets/img/supermarket.png',
+      content: addConent("Ελληνικά Μάρκετ", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 20)
+    },
+    {
+      coords: { lat: 40.582378, lng: 22.956753 },
+      iconImage: '../assets/img/supermarket.png',
+      content: addConent("Μασούτης", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 20)
+    },
+    {
+      coords: { lat: 40.585711, lng: 22.946956 },
+      iconImage: '../assets/img/supermarket.png',
+      content: addConent("Μίνι Μάρκετ", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 30)
+    },
+    {
+      coords: { lat: 40.587677, lng: 22.964766 },
+      iconImage: '../assets/img/supermarket.png',
+      content: addConent("Shop", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 15)
+    }
+    , {
+      coords: { lat: 40.5878228, lng: 22.9563379 },
+      iconImage: '../assets/img/pin.png',
+      content: '<h4>Σπίτι</h4>'
+    },
+  ];
+
+  return markers
+}
+
+
