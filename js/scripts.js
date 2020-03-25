@@ -74,7 +74,7 @@
 // οινοπνευμα
 
 var btn = document.getElementById('btnSearch');
-var option = document.getElementById('selectProduct').value;
+//var option = document.getElementById('selectProduct').value;
 var supermarketName, productName, productQuantity, livePerson;
 //Markers solution
 
@@ -90,7 +90,43 @@ function initMap() {
 
   var foods = [];
   // Array of markers
-  var markers = checkProduct();
+  var markers = [
+    {
+      coords: { lat: 40.5856899, lng: 22.9588858 },
+      iconImage: 'http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/supermarket.png',
+      content: addConent("Lidl", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 40)
+    },
+    {
+      coords: { lat: 40.5881467, lng: 22.9596181 },
+      iconImage: 'http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/supermarket.png',
+      content: addConent("Σκλαβενίτης", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 10)
+    },
+    {
+      coords: { lat: 40.5882771, lng: 22.9534168 },
+      iconImage: 'http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/supermarket.png',
+      content: addConent("Ελληνικά Μάρκετ", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 20)
+    },
+    {
+      coords: { lat: 40.582378, lng: 22.956753 },
+      iconImage: 'http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/supermarket.png',
+      content: addConent("Μασούτης", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 20)
+    },
+    {
+      coords: { lat: 40.585711, lng: 22.946956 },
+      iconImage: 'http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/supermarket.png',
+      content: addConent("Μίνι Μάρκετ", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 30)
+    },
+    {
+      coords: { lat: 40.587677, lng: 22.964766 },
+      iconImage: 'http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/supermarket.png',
+      content: addConent("Shop", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 15)
+    }
+    , {
+      coords: { lat: 40.5878228, lng: 22.9563379 },
+      iconImage: 'http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/pin.png',
+      content: '<h4>Σπίτι</h4>'
+    },
+  ];
 
   // Loop through markers
   for (var i = 0; i < markers.length; i++) {
@@ -201,43 +237,7 @@ function checkProduct() {
       break;
   }
 
-  var markers = [
-    {
-      coords: { lat: 40.5856899, lng: 22.9588858 },
-      iconImage: '../assets/img/supermarket.png',
-      content: addConent("Lidl", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 40)
-    },
-    {
-      coords: { lat: 40.5881467, lng: 22.9596181 },
-      iconImage: '../assets/img/supermarket.png',
-      content: addConent("Σκλαβενίτης", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 10)
-    },
-    {
-      coords: { lat: 40.5882771, lng: 22.9534168 },
-      iconImage: '../assets/img/supermarket.png',
-      content: addConent("Ελληνικά Μάρκετ", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 20)
-    },
-    {
-      coords: { lat: 40.582378, lng: 22.956753 },
-      iconImage: '../assets/img/supermarket.png',
-      content: addConent("Μασούτης", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 20)
-    },
-    {
-      coords: { lat: 40.585711, lng: 22.946956 },
-      iconImage: '../assets/img/supermarket.png',
-      content: addConent("Μίνι Μάρκετ", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 30)
-    },
-    {
-      coords: { lat: 40.587677, lng: 22.964766 },
-      iconImage: '../assets/img/supermarket.png',
-      content: addConent("Shop", ["Γάλα", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25], 15)
-    }
-    , {
-      coords: { lat: 40.5878228, lng: 22.9563379 },
-      iconImage: '../assets/img/pin.png',
-      content: '<h4>Σπίτι</h4>'
-    },
-  ];
+
 
   return markers
 }

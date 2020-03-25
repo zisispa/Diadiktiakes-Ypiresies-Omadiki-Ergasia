@@ -1,3 +1,4 @@
+<?php require 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,18 +143,26 @@
                     </div>
                     <div class="form-group">
                         <label for="basic-url">Δώσε το προϊόν που επιθυμείς: </label>
-                        <select class="form-control form-control search-slt" id="selectProduct" name="product">
-                            <option value="default">Προϊόν</option>
-                            <option value="nero">Νερό</option>
-                            <option value="zymarika">Ζυμαρικά</option>
-                            <option value="gala">Γάλα</option>
-                            <option value="aleuri">Αλεύρι</option>
-                            <option value="ladi">Λάδι</option>
-                            <option value="antiseiptika">Αντισειπτικά</option>
-                            <option value="maskes">Μάσκες</option>
-                            <option value="xarti ygeias">Χαρτί Υγείας</option>
-                            <option value="oinopneuma">Οινόπνευμα</option>
-                        </select>
+                        <ul class="list-group">
+                            <?php 
+
+                            $sql = "SELECT DISTINCT productsName FROM markets ORDER BY productsName";
+                            $result = $conn->query($sql);
+                            while($row = $result->fetch_assoc()) {
+                                
+                            ?>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input product_check"
+                                            value="<?=  $row['productsName']; ?>" id="productName">
+                                        <?= $row['productsName']; ?>
+                                    </label>
+                                </div>
+
+                            </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                     <div class="form-group">
                         <button id="btnSearch" class="btn btn-primary">Αναζήτηση</button>
@@ -179,7 +188,8 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="card" style="width: 18rem;">
-                        <img src="./assets/img/spatis.jpg" class="card-img-top" alt="...">
+                        <img src="http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/spatis.jpg"
+                            class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-dark">Σπάτης Ζήσης</h5>
                             <p class="card-text text-dark">
@@ -189,7 +199,8 @@
                 </div>
                 <div class="col text-center">
                     <div class="card" style="width: 18rem;">
-                        <img src="./assets/img/mpampis.jpg" class="card-img-top" alt="...">
+                        <img src="http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/mpampis.jpg"
+                            class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-dark">Χαράλαμπος Γ. Γεωργιάδης</h5>
                             <p class="card-text text-dark">
@@ -199,7 +210,8 @@
                 </div>
                 <div class="col text-center">
                     <div class="card" style="width: 18rem;">
-                        <img src="./assets/img/smpilias.jpg" class="card-img-top" alt="...">
+                        <img src="http://localhost/Diadiktiakes-Ypiresies-Omadiki-Ergasia/assets/smpilias.jpg"
+                            class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-dark">Βασίλης Σμπήλιας</h5>
                             <p class="card-text text-dark">
@@ -236,3 +248,16 @@
 </body>
 
 </html>
+
+
+<!-- <select class="form-control form-control search-slt" id="selectProduct" name="product">
+                            <!-- <option value="default">Προϊόν</option>
+                            <option value="nero">Νερό</option>
+                            <option value="zymarika">Ζυμαρικά</option>
+                            <option value="gala">Γάλα</option>
+                            <option value="aleuri">Αλεύρι</option>
+                            <option value="ladi">Λάδι</option>
+                            <option value="antiseiptika">Αντισειπτικά</option>
+                            <option value="maskes">Μάσκες</option>
+                            <option value="xarti ygeias">Χαρτί Υγείας</option>
+                            <option value="oinopneuma">Οινόπνευμα</option> -->
