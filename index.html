@@ -18,6 +18,8 @@
         rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="./css/styles.css" rel="stylesheet" />
+
+
 </head>
 
 <body id="page-top">
@@ -153,7 +155,7 @@
                     </div>
                     <div class="form-group">
                         <label for="basic-url">Δώσε την τοποθεσία σου:</label>
-                        <input type="text" placeholder="Thessaloniki" id="searchInput" class="form-control">
+                        <input type="text" placeholder="Thessaloniki" id="searchInput" class="form-control search">
                     </div>
                     <div class="form-group">
                         <button id="btnSearch" class="btn btn-primary">Αναζήτηση</button>
@@ -162,7 +164,6 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <!-- style="display:none;" -->
                     <div id="map">
 
                     </div>
@@ -219,7 +220,6 @@
         </div>
     </footer>
 
-
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -228,7 +228,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <!-- Core theme JS-->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBofP1jK4vfOQyqqaw7mItm624ehpOb5NY&callback="
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBofP1jK4vfOQyqqaw7mItm624ehpOb5NY&&style=feature:all|element:labels|visibility:offshare&callback=initMap"
         type="text/javascript"></script>
     <script src="./js/index.js"></script>
 </body>
