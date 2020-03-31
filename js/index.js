@@ -84,22 +84,52 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.5856899, lng: 22.9588858 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
                 content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.5881467, lng: 22.9596181 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
                 content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
                 content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5971, lng: 22.9643 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
                 iconImage: '../assets/img/supermarket.png',
                 content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
@@ -114,24 +144,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.5856899, lng: 22.9588858 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Lidl", ["Γάλα", "Αλεύρι", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 20], 40)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.5881467, lng: 22.9596181 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Σκλαβενίτης", ["Γάλα", "Ζυμαρικά", "Οινόπνευμα", "Χαρτί Υγείας"], [15, 20, 25, 25], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Ελληνικά Μάρκετ", ["Γάλα", "Αλεύρι", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 60], 23)
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5971, lng: 22.9643 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Γάλα", "Αντισειπτικά", "Οινόπνευμα", "Χαρτί Υγείας"], [15, 20, 25, 40], 20)
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -144,25 +204,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.585711, lng: 22.946956 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μίνι Μάρκετ", ["Ζυμαρικά", "Γάλα", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 30], 40)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.587677, lng: 22.964766 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Shop", ["Ζυμαρικά", "Αλεύρι", "Οινόπνευμα", "Χαρτί Υγείας"], [15, 20, 25, 10], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
+              },
+              {
+                coords: { lat: 40.6048, lng: 22.9740 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
+              },
+              {
+                coords: { lat: 40.5971, lng: 22.9643 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
               ,
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.5873, lng: 22.9493 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Ελληνικά Μάρκετ", ["Ζυμαρικά", "Γάλα", "Οινόπνευμα", "Μάσκες"], [15, 20, 25, 70], 20)
-              },
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5945, lng: 22.9861 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Ζυμαρικά", "Αλεύρι", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 35], 33)
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -175,24 +264,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.585711, lng: 22.946956 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μίνι Μάρκετ", ["Αλεύρι", "Γάλα", "Οινόπνευμα", "Μάσκες"], [15, 20, 25, 15], 30)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.587677, lng: 22.964766 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Shop", ["Αλεύρι", "Ζυμαρικά", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 70], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Ελληνικά Μάρκετ", ["Αλεύρι", "Γάλα", "Οινόπνευμα", "Μάσκες"], [15, 20, 25, 32], 25)
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5971, lng: 22.9643 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Αλεύρι", "Ζυμαρικά", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 44], 40)
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -205,24 +324,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.585711, lng: 22.946956 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μίνι Μάρκετ", ["Λάδι", "Ζυμαρικά", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 23], 30)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.587677, lng: 22.964766 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Shop", ["Λάδι", "Γάλα", "Οινόπνευμα", "Μάσκες"], [15, 20, 25, 33], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Ελληνικά Μάρκετ", ["Λάδι", "Ζυμαρικά", "Οινόπνευμα"], [15, 20, 25, 22], 40)
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5971, lng: 22.9643 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Λάδι", "Αλεύρι", "Οινόπνευμα", "Μάσκες"], [15, 20, 25, 11], 25)
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -235,19 +384,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.585711, lng: 22.946956 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μίνι Μάρκετ", ["Αντισειπτικά", "Αλεύρι", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 44], 40)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.587677, lng: 22.964766 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Shop", ["Αντισειπτικά", "Ζυμαρικά", "Οινόπνευμα", "Μάσκες"], [15, 20, 25, 24], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Αντισειπτικά", "Γάλα", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 70], 20)
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
+              },
+              {
+                coords: { lat: 40.5971, lng: 22.9643 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -260,24 +444,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.585711, lng: 22.946956 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μίνι Μάρκετ", ["Μάσκες", "Αλεύρι", "Οινόπνευμα"], [15, 20, 25, 65], 30)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.587677, lng: 22.964766 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Shop", ["Μάσκες", "Γάλα", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 89], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Ελληνικά Μάρκετ", ["Μάσκες", "Ζυμαρικά", "Οινόπνευμα", "Λάδι"], [15, 20, 25, 33], 20)
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5971, lng: 22.9643 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Μάσκες", "Αλεύρι", "Οινόπνευμα", "Μάσκες"], [15, 20, 25, 55], 40)
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -290,24 +504,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.585711, lng: 22.946956 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μίνι Μάρκετ", ["Χαρτί Υγείας", "Αλεύρι", "Οινόπνευμα", "Αντισειπτικά"], [15, 20, 25, 22], 30)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.587677, lng: 22.964766 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Shop", ["Χαρτί Υγείας", "Αλεύρι", "Οινόπνευμα", "Αντισειπτικά"], [15, 20, 25, 35], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Ελληνικά Μάρκετ", ["Χαρτί Υγείας", "Ζυμαρικά", "Οινόπνευμα", "Οινόπνευμα"], [15, 20, 25, 65], 20)
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5971, lng: 22.9643 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Χαρτί Υγείας", "Αλεύρι", "Οινόπνευμα", "Οινόπνευμα"], [15, 20, 25, 67], 40)
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -320,24 +564,54 @@ $(function () {
                 content: '<h4>Σπίτι</h4>',
               },
               {
-                coords: { lat: 40.585711, lng: 22.946956 },
+                coords: { lat: 40.6218, lng: 22.9673 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μίνι Μάρκετ", ["Οινόπνευμα", "Αλεύρι", "Χαρτί Υγείας", "Γάλα"], [15, 20, 25, 45], 30)
+                content: addConent("Lidl", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 50], 40)
               },
               {
-                coords: { lat: 40.587677, lng: 22.964766 },
+                coords: { lat: 40.6104, lng: 22.9574 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Shop", ["Οινόπνευμα", "Ζυμαρικά", "Νερό", "Γάλα"], [15, 20, 25, 78], 15)
+                content: addConent("Σκλαβενίτης", ["Νερό", "Γάλα", "Ζυμαρικά", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25], 10)
               },
               {
-                coords: { lat: 40.5882771, lng: 22.9534168 },
+                coords: { lat: 40.6048, lng: 22.9740 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Ελληνικά Μάρκετ", ["Οινόπνευμα", "Αλεύρι", "Χαρτί Υγείας", "Γάλα"], [15, 20, 25, 43], 20)
+                content: addConent("Ελληνικά Μάρκετ", ["Νερό", "Αλεύρι", "Οινόπνευμα", "Αλεύρι"], [15, 20, 25, 35], 20)
               },
               {
-                coords: { lat: 40.582378, lng: 22.956753 },
+                coords: { lat: 40.5971, lng: 22.9643 },
                 iconImage: '../assets/img/supermarket.png',
-                content: addConent("Μασούτης", ["Οινόπνευμα", "Ζυμαρικά", "Νερό", "Γάλα"], [15, 20, 25, 44], 40)
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5873, lng: 22.9493 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5945, lng: 22.9861 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5735, lng: 22.9543 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5762, lng: 22.9700 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
+              }
+              ,
+              {
+                coords: { lat: 40.5700, lng: 22.9840 },
+                iconImage: '../assets/img/supermarket.png',
+                content: addConent("Μασούτης", ["Νερό", "Γάλα", "Λάδι", "Χαρτί Υγείας"], [15, 20, 25, 40], 30)
               }
             ];
             initMap(markersAdd);
@@ -381,7 +655,7 @@ $(function () {
 function initMap(markersAdd) {
   // Map options
   var options = {
-    zoom: 14,
+    zoom: 12,
     center: { lat: 40.5878228, lng: 22.9563379 }
   }
 
