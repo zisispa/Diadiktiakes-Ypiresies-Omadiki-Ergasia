@@ -90,18 +90,27 @@
                                             <div class="form-group">
                                                     <label for="address">Address</label>
                                                     <select id="address" name="address" class="form-control">
-                                                        <option value="<?php $_SESSION['db_address'] ?>"><?php echo $_SESSION['db_address']; ?></option>
-                                                        <?php  select_Address(); ?>
+                                                        <?php  select_address(); ?>
                                                     </select>
                                             </div>
                                             <div class="form-group">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+
+                                                <?php  if($_SESSION['advertising'] == 'yes'){
+                                                    echo "<input type='checkbox' class='custom-control-input' id='customCheck1' value='yes' name='advertising_check' checked>";
+                                                }else {
+                                                    echo "<input type='checkbox' class='custom-control-input' id='customCheck1' value='yes' name='advertising_check'>";
+                                                } ?>
+                                                    <!-- <input type="checkbox" class="custom-control-input" id="customCheck1" value="yes" name="advertising_check"> -->
                                                     <label class="custom-control-label" for="customCheck1">Ειδοποίησης για προσφορές προϊόντων από τα κοντινά καταστήματα</label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary" name="update">Submit</button>
+                                            </div>
+                                            <?php delete(); ?>
+                                            <div class="form-group">
+                                                <button class="btn btn-danger" name="delete">Delete your account</button>
                                             </div> 
                                     </form>
                                 </div>

@@ -36,6 +36,7 @@ function login()
             $db_password = $row['password'];
             $db_email    = $row['email'];
             $db_address  = $row['address'];
+            $db_advertising = $row['advertising'];
         }
 
 
@@ -47,6 +48,7 @@ function login()
             $_SESSION['db_password']    = $db_password;
             $_SESSION['db_email']       = $db_email;
             $_SESSION['db_address']     = $db_address;
+            $_SESSION['advertising']    = $db_advertising;
             header("Location: index.php");
 
         } else {
@@ -111,7 +113,11 @@ function update(){
         $email    = $_POST['email'];
         $address  = $_POST['address'];
 
-        $query = "UPDATE users SET username='{$username}', password='{$password}',email='{$email}',address='{$address}' WHERE user_id='{$_SESSION['db_user_id']}' ";
+        if($_POST['advertising_check'] == 'yes'){
+            $advertising_check = $_POST['advertising_check'];
+        }
+
+        $query = "UPDATE users SET username='{$username}', password='{$password}',email='{$email}',address='{$address}',advertising='{$advertising_check}' WHERE user_id='{$_SESSION['db_user_id']}' ";
         $select_user_query = mysqli_query($connection, $query);
 
         if (!$select_user_query) {
@@ -139,10 +145,11 @@ function select_address(){
             die("Query failed" . mysqli_error($connection));
         }
 
-        while ($row = mysqli_fetch_array($select_address_query)) {
+            while ($row = mysqli_fetch_array($select_address_query)) {
 
-            echo "<option value=" . $row['supermarkets_address'] . "> ". $row['supermarkets_address'] . "</option>";
-        }
+                     echo "<option value=" . $row['supermarkets_address'] . "> ". $row['supermarkets_address'] . "</option>";
+            
+            }
 
 }
 
@@ -161,5 +168,26 @@ function select_products(){
 
             echo "<option value=" . $row['product_name'] . ">". $row['product_name'] . "</option>";
         }
+
+}
+
+function delete(){
+
+    global $connection;
+
+    if(isset($_POST['delete'])){
+        
+        $query = 'DELETE FROM users WHERE user_id="' . $_SESSION["db_user_id"] . '"  ';
+        $select_delete_query = mysqli_query($connection, $query);
+
+        if (!$select_delete_query) {
+            die("Query failed" . mysqli_error($connection));
+        }
+
+        session_start();
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+    }
 
 }
