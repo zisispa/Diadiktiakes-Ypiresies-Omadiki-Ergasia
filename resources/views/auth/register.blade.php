@@ -107,6 +107,16 @@
                                                         name="password_confirmation" required autocomplete="new-password">
 
                                                 </div>
+
+                                                <div class="form-group">
+                                                    <label for="region_id">Επέλεξε Περιοχή</label>
+                                                    <select class="form-control" name="region_id" id="region_id">
+                                                        @foreach ($regions as $region)
+                                                            <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
                                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                                     Εγγραφή
                                                 </button>

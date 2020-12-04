@@ -16,10 +16,8 @@ class CreateRegionsTable extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('supermarket_id');
+            $table->string('slug')->unique();
             $table->timestamps();
-
-            $table->foreign('supermarket_id')->references('id')->on('supermarkets');
         });
     }
 

@@ -29,6 +29,8 @@
 
 <body id="page-top">
 
+    @include('components.Navbar.index')
+
     @yield('content')
 
     <!--Bootstrap core JS-->

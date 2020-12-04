@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductSupermarketTable extends Migration
+class CreateProductShopTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateProductSupermarketTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_supermarket', function (Blueprint $table) {
-            $table->primary(['product_id', 'supermarket_id']);
+        Schema::create('product_shop', function (Blueprint $table) {
+            $table->primary(['product_id', 'shop_id']);
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreignId('supermarket_id')->references('id')->on('supermarkets')->onDelete('cascade');
+            $table->foreignId('shop_id')->references('id')->on('shops')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateProductSupermarketTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_supermarket');
+        Schema::dropIfExists('product_shop');
     }
 }

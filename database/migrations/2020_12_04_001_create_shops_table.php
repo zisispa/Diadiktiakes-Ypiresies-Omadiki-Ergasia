@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuperMarketsTable extends Migration
+class CreateShopsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,17 @@ class CreateSuperMarketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('supermarkets', function (Blueprint $table) {
+        Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('address');
             $table->string('image');
             $table->integer('visitors');
+            $table->string('phone')->nullable();
+            $table->unsignedBigInteger('region_id');
             $table->timestamps();
+
+            $table->foreign('region_id')->references('id')->on('regions');
         });
     }
 
@@ -30,6 +34,6 @@ class CreateSuperMarketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supermarkets');
+        Schema::dropIfExists('shops');
     }
 }
