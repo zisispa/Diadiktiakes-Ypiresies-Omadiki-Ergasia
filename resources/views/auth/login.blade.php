@@ -14,7 +14,10 @@
         }
 
         .bg {
-            background-image: url('{{ asset('assets/background.jpg') }}');
+            background: linear-gradient(to bottom,
+                    rgba(92, 77, 66, 0.8) 0%,
+                    rgba(92, 77, 66, 0.8) 100%),
+                url("../assets/background.jpg");
             /* Full height */
             height: 100%;
 

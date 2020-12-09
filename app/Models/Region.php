@@ -14,8 +14,8 @@ class Region extends Model
         return $this->hasMany(User::class);
     }
 
-    public function shop()
+    public function shops()
     {
-        return $this->belongsTo(Shop::class);
+        return $this->hasMany(Shop::class, 'region_id');
     }
 }

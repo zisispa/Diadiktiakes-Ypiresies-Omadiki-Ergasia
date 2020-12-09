@@ -9,7 +9,6 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">ΥΠΗΡΕΣΙΕΣ</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#search">ΑΝΑΖΗΤΗΣΗ</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">ΟΜΑΔΑ</a></li>
 
                 @auth
                     <li class="nav-item dropdown">

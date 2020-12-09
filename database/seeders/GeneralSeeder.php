@@ -6,7 +6,9 @@ use App\Models\Product;
 use App\Models\Region;
 use App\Models\Shop;
 use App\Models\SuperMarket;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class GeneralSeeder extends Seeder
 {
@@ -17,9 +19,6 @@ class GeneralSeeder extends Seeder
      */
     public function run()
     {
-        // $region1 = Region::create([
-
-        // ]);
 
         //Start Products
         //
@@ -116,6 +115,13 @@ class GeneralSeeder extends Seeder
         //
         //
         //End Regions
+
+        $user1 = User::create([
+            'name' => 'Ζ΄ησης Σπάτης',
+            'email' => 'zisis@gmail.com',
+            'password' => Hash::make('111111111'),
+            'region_id' => $region1->id
+        ]);
 
         //Start Supermarkets
         //

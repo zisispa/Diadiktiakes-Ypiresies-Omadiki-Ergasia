@@ -14,7 +14,10 @@
         }
 
         .bg {
-            background-image: url('{{ asset('assets/background.jpg') }}');
+            background: linear-gradient(to bottom,
+                    rgba(92, 77, 66, 0.8) 0%,
+                    rgba(92, 77, 66, 0.8) 100%),
+                url("../assets/background.jpg");
             /* Full height */
             height: 100%;
 
@@ -74,22 +77,34 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password">Κωδικός</label>
+                                        <label for="old_password">Παλιός Κωδικός</label>
+
+                                        <input type="password"
+                                            class="form-control {{ $errors->has('old_password') ? 'is-invalid' : '' }}"
+                                            name="old_password" id="old_password" placeholder="Δώστε Παλίο Κωδικό">
+                                        @if ($errors->has('old_password'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('old_password') }}
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Νέος Κωδικός</label>
+
                                         <input type="password"
                                             class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
-                                            name="password" id="password" placeholder="Δώστε Τίτλο Ανακοίνωσης">
-                                        <!-- Error -->
+                                            name="password" id="password" placeholder="Δώστε Νέο Κωδικό">
                                         @if ($errors->has('password'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('password') }}
                                             </div>
                                         @endif
-
                                     </div>
 
 
                                     <div class="form-group">
-                                        <label for="region_id">Κωδικός</label>
+                                        <label for="region_id">Περιοχή</label>
                                         <select class="form-control {{ $errors->has('teacher_id') ? 'is-invalid' : '' }}"
                                             name="region_id" id="region_id">
                                             @foreach ($regions as $region)

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,14 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/', function () {
-    return view('pages.Homepage.index');
-});
-
+Route::get('/getshops/{region}', [ShopController::class, 'getshops']);
 
 Route::middleware(['auth'])->group(function () {
+
     Route::resource('user', 'App\Http\Controllers\UserController');
     Route::get('/profile/{user}', [UserController::class, 'profile'])->name('profile');
 });

@@ -82,4 +82,28 @@ class ShopController extends Controller
     {
         //
     }
+
+    public function getshops($region)
+    {
+
+        // $id = $product_id;
+        // $regions = Shop::where('region_id', $region_id)->get();
+
+        //$shops = Product::where('id', $shop_id)->get();
+
+        //Shop::where('region_id', $region_id)->get();
+
+        // $filtered_shops =  $regions->filter(function ($value, $key) {
+        //     foreach ($ids as $id) {
+        //     }
+        // });use ($product_id)
+
+        // $filtered_shops = Shop::where('region_id', $region_id)->whereHas('products', function ($q) {
+        //     $q->where('id',  2);
+        // })->get();
+        set_time_limit(0);
+        return Shop::find(1)->get();
+
+        //return $region;
+    }
 }

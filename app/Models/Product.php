@@ -9,8 +9,15 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $appends = ['shops'];
+
     public function shops()
     {
         return $this->belongsToMany(Shop::class);
+    }
+
+    public function getShopsAttribute()
+    {
+        return $this->shops()->get();
     }
 }
