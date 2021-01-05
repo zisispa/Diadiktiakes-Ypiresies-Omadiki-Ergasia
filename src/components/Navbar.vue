@@ -1,10 +1,8 @@
 <template>
-  <!-- This example requires Tailwind CSS v2.0+ -->
   <nav class="bg-indigo-600">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
           <button
             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-expanded="false"
@@ -66,17 +64,29 @@
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <a
-                href="#"
+                href="#info"
+                v-smooth-scroll="{
+                  duration: 1000,
+                  offset: -50,
+                }"
                 class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium uppercase"
                 >Πληροφοριες</a
               >
               <a
-                href="#"
+                href="#services"
+                v-smooth-scroll="{
+                  duration: 1000,
+                  offset: -50,
+                }"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase"
                 >Υπηρεσια</a
               >
               <a
-                href="#"
+                href="#search"
+                v-smooth-scroll="{
+                  duration: 1000,
+                  offset: -50,
+                }"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase"
                 >Αναζητηση</a
               >
@@ -113,12 +123,7 @@
                 aria-haspopup="true"
                 @click="toggleOpen"
               >
-                <i class="fas fa-user-alt fa-lg"></i>
-                <!-- <img
-                  class="h-8 w-8 rounded-full"
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                /> -->
+                <i class="fas fa-user-alt fa-md"></i>
               </button>
             </div>
             <div

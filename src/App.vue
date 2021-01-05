@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar v-if="hide" />
     <router-view />
   </div>
 </template>
@@ -12,8 +12,10 @@ export default {
   components: {
     Navbar,
   },
+  computed: {
+    hide() {
+      return this.$route.name !== "Login" || this.$route.name !== "SignUp";
+    },
+  },
 };
 </script>
-
-<style>
-</style>

@@ -4,6 +4,9 @@ import router from "./router";
 import "./index.css";
 import firebase from "firebase/app";
 import "./firebase/init";
+import VueSmoothScroll from "vue2-smooth-scroll";
+
+Vue.use(VueSmoothScroll);
 
 Vue.config.productionTip = false;
 

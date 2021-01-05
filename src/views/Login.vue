@@ -1,47 +1,42 @@
 <template>
-  <div
-    class="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
-  >
+  <div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
       <div>
-        <img
-          class="mx-auto h-12 w-auto"
-          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-          alt="Workflow"
-        />
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Sign in to your account
+          Καλώς ήρθες, Κάνε Είσοδο!
         </h2>
         <p class="mt-2 text-center text-sm text-gray-600">
-          Or
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
-            start your 14-day free trial
-          </a>
+          To SearchAid είναι μια πρωτότυπη εφαρμογή που εντοπίζει το προϊόν της
+          επιλογής σου στα πλησιέστερα καταστήματα.
         </p>
       </div>
       <form class="mt-8 space-y-6" @submit.prevent="onSubmitLogin">
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
-          <div>
-            <label for="email-address" class="sr-only">Email address</label>
+          <div class="relative mb-3 text-gray-600 focus-within:text-gray-400">
+            <span
+              class="absolute inset-y-0 left-0 flex items-center pl-2 focus:text-indigo-500"
+            >
+              <i class="fas fa-user"></i>
+            </span>
             <input
-              id="email-address"
-              v-model="email"
               type="email"
-              required
-              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="Email address"
+              v-model="email"
+              class="rounded-none block w-full py-2 pl-10 border border-gray-300 text-gray-900 rounded-t-md focus:outline-none focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Email..."
             />
           </div>
-          <div>
-            <label for="password" class="sr-only">Password</label>
+          <div class="relative mb-3 text-gray-600 focus-within:text-gray-400">
+            <span
+              class="absolute inset-y-0 left-0 flex items-center pl-2 focus:text-indigo-500"
+            >
+              <i class="fas fa-key"></i>
+            </span>
             <input
-              id="password"
-              v-model="password"
               type="password"
-              required
-              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="Password"
+              v-model="password"
+              class="rounded-none block w-full py-2 pl-10 border border-gray-300 text-gray-900 rounded-t-md focus:outline-none focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Password..."
             />
           </div>
         </div>
