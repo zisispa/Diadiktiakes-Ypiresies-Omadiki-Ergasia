@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import SignUp from "../views/SignUp.vue";
+import Profile from "../views/Profile.vue";
 import firebase from "firebase";
 
 Vue.use(VueRouter);
@@ -12,9 +13,6 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
-    // meta: {
-    //   requiresGuest: true,
-    // },
   },
   {
     path: "/login",
@@ -30,6 +28,14 @@ const routes = [
     component: SignUp,
     meta: {
       requiresGuest: true,
+    },
+  },
+  {
+    path: "/profile/:user_slug",
+    name: "Profile",
+    component: Profile,
+    meta: {
+      requiresAuth: true,
     },
   },
 ];

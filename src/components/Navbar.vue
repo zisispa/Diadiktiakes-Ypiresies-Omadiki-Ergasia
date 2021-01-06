@@ -46,20 +46,16 @@
           class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
         >
           <div class="flex-shrink-0 flex items-center">
-            <a href="/">
-              <img
-                class="block lg:hidden h-8 w-auto"
-                src="../assets/search.png"
-                alt="Workflow"
-              />
-            </a>
-            <a href="/">
-              <img
-                class="hidden lg:block h-8 w-auto"
-                src="../assets/search.png"
-                alt="Workflow"
-              />
-            </a>
+            <router-link
+              class="block lg:hidden text-white py-1 h-8 w-auto text-center text-lg font-bold uppercase"
+              to="/"
+              >SearchAid</router-link
+            >
+            <router-link
+              class="hidden lg:block text-white py-1 h-8 w-autotext-center text-lg font-bold uppercase"
+              to="/"
+              >SearchAid</router-link
+            >
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
@@ -78,7 +74,7 @@
                   duration: 1000,
                   offset: -50,
                 }"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase"
+                class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase"
                 >Υπηρεσια</a
               >
               <a
@@ -87,7 +83,7 @@
                   duration: 1000,
                   offset: -50,
                 }"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase"
+                class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase"
                 >Αναζητηση</a
               >
             </div>
@@ -103,13 +99,13 @@
                 class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium uppercase"
                 to="/login"
                 v-if="!isLoggedIn"
-                >Login</router-link
+                >Συνδεση</router-link
               >
               <router-link
                 class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium uppercase"
                 to="/signup"
                 v-if="!isLoggedIn"
-                >Register</router-link
+                >Εγγραφη</router-link
               >
             </div>
           </div>
@@ -133,18 +129,21 @@
               aria-labelledby="user-menu"
               v-if="open"
             >
-              <a
-                href="#"
+              <router-link
+                :to="{
+                  name: 'Profile',
+                  params: { user_slug: currentUserSlug },
+                }"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
-                >Your Profile</a
+                >Λογαριασμός</router-link
               >
               <a
                 class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 @click="logout"
               >
-                Sign out
+                Αποσύνδεση
               </a>
             </div>
           </div>
@@ -153,33 +152,32 @@
     </div>
     <div v-if="openMenu">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <a
-          href="#"
-          class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
+          href="#info"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
           >Πληροφοριες</a
         >
         <a
-          href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          href="#services"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
           >Υπηρεσια</a
         >
         <a
-          href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          href="#search"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
           >Αναζητηση</a
         >
         <router-link
           v-if="!isLoggedIn"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
           to="/login"
-          >Login</router-link
+          >Συνδεση</router-link
         >
         <router-link
           v-if="!isLoggedIn"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
           to="/signup"
-          >Register</router-link
+          >Εγγραφη</router-link
         >
       </div>
     </div>
@@ -187,7 +185,8 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from "firebase/app";
+import db from "@/firebase/init";
 
 export default {
   data() {
@@ -196,13 +195,25 @@ export default {
       openMenu: false,
       isLoggedIn: false,
       currentUser: false,
+      currentUserSlug: "",
+      currentUserFullName: "",
     };
   },
   created() {
     if (firebase.auth().currentUser) {
       this.isLoggedIn = true;
-      this.currentUser = firebase.auth().currentUser.email;
+
+      //this.currentUserSlug = firebase.auth().currentUser.uid;
+
+      db.collection("users")
+        .doc(firebase.auth().currentUser.uid)
+        .get()
+        .then((snapshot) => {
+          this.currentUserSlug = snapshot.data().slug;
+        });
     }
+
+    // console.log(this.currentUser);
   },
   methods: {
     toggleOpen() {
@@ -216,7 +227,7 @@ export default {
         .auth()
         .signOut()
         .then(() => {
-          this.$router.go({ path: this.$router.path });
+          this.$router.go({ name: "Home" });
         });
     },
   },

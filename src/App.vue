@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <Navbar v-if="hide" />
+  <div>
+    <Navbar v-if="['Home', 'Profile'].includes($route.name)" />
     <router-view />
   </div>
 </template>
@@ -11,11 +11,6 @@ import Navbar from "@/components/Navbar";
 export default {
   components: {
     Navbar,
-  },
-  computed: {
-    hide() {
-      return this.$route.name !== "Login" || this.$route.name !== "SignUp";
-    },
   },
 };
 </script>

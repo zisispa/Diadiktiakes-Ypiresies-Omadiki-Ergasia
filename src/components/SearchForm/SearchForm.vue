@@ -13,9 +13,11 @@
         </p>
       </div>
       <div class="mt-10">
-        <div class="grid grid-cols-12">
-          <div class="col-span-2">
-            <div class="flex flex-col">
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-12">
+          <div class="col-span-1 md:col-span-2">
+            <div
+              class="flex flex-col shadow overflow-hidden p-3 rounded-md bg-white"
+            >
               <div class="">
                 <h1
                   class="block mt-1 text-lg leading-tight font-medium text-black"
@@ -57,7 +59,7 @@
               </div>
             </div>
           </div>
-          <div class="col-span-10">
+          <div class="col-span-1 md:col-span-10">
             <div v-for="shop in filteredShops" :key="shop.id">
               <CartShop
                 :name="shop.name"
@@ -68,7 +70,7 @@
                 :products="shop.products"
               />
             </div>
-            <div class="text-center">
+            <!-- <div class="text-center">
               <nav
                 class="relative z-0 inline-flex shadow-sm -space-x-px"
                 aria-label="Pagination"
@@ -118,7 +120,7 @@
                   </svg>
                 </a>
               </nav>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -157,7 +159,7 @@ export default {
         });
 
       db.collection("shops")
-        .limit(this.perPage)
+
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
@@ -213,7 +215,7 @@ export default {
       ) {
         return this.shops;
       } else if (
-        this.selectedProduct.length != 0 ||
+        this.selectedProduct.length != 0 &&
         this.selectedMunicipality.length != 0
       ) {
         return this.shops
@@ -225,26 +227,20 @@ export default {
           .filter((item) => this.selectedMunicipality.includes(item.region_id));
       } else if (
         this.selectedProduct.length === 0 &&
-        this.selectedMunicipality.length != 0
+        this.selectedMunicipality.length > 0
       ) {
-        return this.shops
-          .filter((item) => {
-            return item.products.some((item) => {
-              return this.selectedProduct.includes(item.id);
-            });
-          })
-          .filter((item) => this.selectedMunicipality.includes(item.region_id));
+        return this.shops.filter((item) =>
+          this.selectedMunicipality.includes(item.region_id)
+        );
       } else if (
         this.selectedProduct.length != 0 &&
         this.selectedMunicipality.length === 0
       ) {
-        return this.shops
-          .filter((item) => {
-            return item.products.some((item) => {
-              return this.selectedProduct.includes(item.id);
-            });
-          })
-          .filter((item) => this.selectedMunicipality.includes(item.region_id));
+        return this.shops.filter((item) => {
+          return item.products.some((item) => {
+            return this.selectedProduct.includes(item.id);
+          });
+        });
       }
     },
   },

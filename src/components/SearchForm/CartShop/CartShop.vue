@@ -50,8 +50,13 @@
 </template>
 
 <script>
+import { BadgerAccordion, BadgerAccordionItem } from "vue-badger-accordion";
 export default {
   props: ["name", "image", "address", "phone", "visitors", "products"],
+  components: {
+    BadgerAccordion,
+    BadgerAccordionItem,
+  },
 };
 </script>
 
