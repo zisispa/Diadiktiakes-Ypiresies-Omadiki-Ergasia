@@ -1,6 +1,8 @@
+![alt text](https://github.com/zisispa/searchapp/blob/master/searchaid.PNG?raw=true)
+
 ## About this Project
 
-This is a Food Shop Searcher implemented with Vue and Firebase. In this project you can search based in your region and the foods tha you want from the list tha display the current shop that you can visit. The particularity that this project has is to help the users visit the food shop that has the current food tha they want and not go from shop to shop and search if has it. In addition, display the live visitors each of the shop in order that avoid overcrowding in the shop.
+This is a Food Shop Searcher implemented with Vue and Firebase. In this app you can search for the availability of specific food items in supermarkets and convenience stores your region. Users can ensure that the item they are looking for is available in the store, before they visit it. In addition, there is a visitor estimator for each shop that informs users about the number of customers in each shop in real time, in order to avoid overcrowding.
 
 ## Technologies
 
