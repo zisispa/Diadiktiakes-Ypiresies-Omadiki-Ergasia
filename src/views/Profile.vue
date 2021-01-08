@@ -1,26 +1,28 @@
 <template>
-  <div v-if="user" class="max-w-7xl mt-5 mx-auto px-2 sm:px-6 lg:px-8">
-    <div class="md:grid md:grid-cols-3 md:gap-6">
-      <div class="shadow overflow-hidden rounded-md p-5 md:col-span-1">
-        <div class="px-4 sm:px-0">
-          <h3 class="text-lg font-medium leading-6 text-gray-900">
-            Προσωπικές Πληροφοριες
-          </h3>
-          <p class="my-5 text-md font-medium text-gray-600">
-            <i class="fas fa-user fa-lg text-indigo-600"></i>
-            {{ user.fullname }}
-          </p>
-          <p class="my-5 text-md font-medium text-gray-600">
-            <i class="fas fa-envelope fa-lg text-indigo-600"></i>
-            {{ user.email }}
-          </p>
-          <p class="text-md font-medium text-gray-600">
-            <i class="fas fa-map-marker-alt fa-lg text-indigo-600"></i>
-            {{ regionFilter(user.municipalities) }}
-          </p>
+  <div class="background-image">
+    <div v-if="user" class="grid h-screen grid-cols-12 px-4 mx-auto">
+      <div class="col-span-12 lg:col-span-3 my-5 md:mr-2 lg:mt-2">
+        <div class="shadow overflow-hidden rounded-md p-5 bg-white">
+          <div class="">
+            <h3 class="text-lg font-medium leading-6 text-gray-900">
+              Προσωπικές Πληροφοριες
+            </h3>
+            <p class="my-5 text-md font-medium text-gray-600">
+              <i class="fas fa-user fa-lg text-indigo-600"></i>
+              {{ user.fullname }}
+            </p>
+            <p class="my-5 text-md font-medium text-gray-600">
+              <i class="fas fa-envelope fa-lg text-indigo-600"></i>
+              {{ user.email }}
+            </p>
+            <p class="text-md font-medium text-gray-600">
+              <i class="fas fa-map-marker-alt fa-lg text-indigo-600"></i>
+              {{ regionFilter(user.municipalities) }}
+            </p>
+          </div>
         </div>
       </div>
-      <div class="mt-5 md:mt-0 md:col-span-2">
+      <div class="col-span-12 lg:col-span-9 lg:mt-2">
         <form @submit.prevent="handleSubmit">
           <div class="shadow overflow-hidden rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
@@ -167,4 +169,9 @@ export default {
 </script>
 
 <style>
+.background-image {
+  background-image: url("../assets/background-login-register.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 </style>

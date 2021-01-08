@@ -34,6 +34,7 @@
                       type="checkbox"
                       v-model="selectedMunicipality"
                       :value="municipality.id"
+                      checked="checkIfRegion(municipality.id)"
                     /><span class="ml-2 text-gray-700">{{
                       municipality.name
                     }}</span>
@@ -131,6 +132,7 @@
 <script>
 import db from "@/firebase/init";
 import CartShop from "./CartShop/CartShop";
+import firebase from "firebase/app";
 
 export default {
   components: {
@@ -147,6 +149,7 @@ export default {
       total: 0,
       pages: 0,
       perPage: 3,
+      userMunicipality: null,
     };
   },
   methods: {
@@ -201,11 +204,26 @@ export default {
           });
         });
     },
+    loadUserMunicipalitie() {
+      db.collection("users")
+        .doc(firebase.auth().currentUser.uid)
+        .get()
+        .then((snapshot) => {
+          this.userMunicipality = snapshot.data().municipalities;
+        });
+    },
+    checkIfRegion(id) {
+      if (id === this.userMunicipality) {
+        return true;
+      }
+      return false;
+    },
   },
   mounted() {
     this.loadShops();
     this.loadMunicipalities();
     this.loadProducts();
+    this.loadUserMunicipalitie();
   },
   computed: {
     filteredShops: function () {
