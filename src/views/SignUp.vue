@@ -65,6 +65,24 @@
               />
             </div>
           </div>
+          <div class="">
+            <label for="region" class="block text-sm font-medium text-gray-700"
+              >Περιοχή</label
+            >
+            <select
+              id="region"
+              v-model="selectRegion"
+              class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            >
+              <option
+                :key="region.id"
+                :value="region.name"
+                v-for="region in regions"
+              >
+                {{ region.name }}
+              </option>
+            </select>
+          </div>
           <div>
             <button
               type="submit"
@@ -98,6 +116,8 @@ export default {
       fullname: "",
       loading: false,
       slug: null,
+      regions: [],
+      selectRegion: null,
     };
   },
   components: {
@@ -123,6 +143,7 @@ export default {
                 fullname: this.fullname,
                 email: this.email,
                 slug: this.slug,
+                region: this.selectRegion,
               })
               .then((docRef) => {
                 this.$router.push({ name: "Home" });
@@ -139,13 +160,26 @@ export default {
           this.loading = false;
         });
     },
+    loadRegion() {
+      db.collection("regions")
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            let region = doc.data();
+            this.regions.push(region);
+          });
+        });
+    },
+  },
+  mounted() {
+    this.loadRegion();
   },
 };
 </script>
 
 <style>
 .background-image {
-  background-image: url("../assets/background-login-register.jpg");
+  background-image: url("../assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

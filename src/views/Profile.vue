@@ -17,7 +17,7 @@
             </p>
             <p class="text-md font-medium text-gray-600">
               <i class="fas fa-map-marker-alt fa-lg text-indigo-600"></i>
-              {{ regionFilter(user.municipalities) }}
+              {{ user.region }}
             </p>
           </div>
         </div>
@@ -69,11 +69,11 @@
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option
-                      :key="municipalitie.id"
-                      :value="municipalitie.id"
-                      v-for="municipalitie in municipalities"
+                      :key="region.id"
+                      :value="region.id"
+                      v-for="region in regions"
                     >
-                      {{ municipalitie.name }}
+                      {{ region.name }}
                     </option>
                   </select>
                 </div>
@@ -97,6 +97,7 @@
 <script>
 import db from "@/firebase/init";
 import slugify from "slugify";
+import firebase from "firebase/app";
 
 export default {
   data() {
@@ -104,7 +105,8 @@ export default {
       user: null,
       selectRegion: null,
       slug: null,
-      municipalities: [],
+      regions: [],
+      userRegion: "",
     };
   },
   created() {
@@ -120,13 +122,13 @@ export default {
     });
   },
   methods: {
-    loadMunicipalities() {
-      db.collection("municipalities")
+    loadRegions() {
+      db.collection("regions")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            let municipality = doc.data();
-            this.municipalities.push(municipality);
+            let region = doc.data();
+            this.regions.push(region);
           });
         });
     },
@@ -143,7 +145,7 @@ export default {
           fullname: this.user.fullname,
           email: this.user.email,
           slug: this.slug,
-          municipalities: this.selectRegion,
+          region: this.selectRegion,
         })
         .then((docRef) => {
           this.$router.push({ name: "Home" });
@@ -152,25 +154,16 @@ export default {
           console.error("Error adding employee: ", error);
         });
     },
-    regionFilter(region_id) {
-      let regionTest = this.municipalities.filter((municipalitie) => {
-        return municipalitie.id === region_id;
-      });
-
-      console.log(regionTest[0].name);
-
-      return regionTest[0].name;
-    },
   },
   mounted() {
-    this.loadMunicipalities();
+    this.loadRegions();
   },
 };
 </script>
 
 <style>
 .background-image {
-  background-image: url("../assets/background-login-register.jpg");
+  background-image: url("../assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

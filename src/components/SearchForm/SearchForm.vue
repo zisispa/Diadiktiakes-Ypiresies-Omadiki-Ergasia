@@ -24,20 +24,15 @@
                 >
                   Περιοχές
                 </h1>
-                <div
-                  v-for="municipality in municipalities"
-                  :key="municipality.id"
-                >
+                <div v-for="region in regions" :key="region.id">
                   <label class="inline-flex items-center mt-3">
                     <input
                       class="form-checkbox h-5 w-5 text-blue-600"
                       type="checkbox"
-                      v-model="selectedMunicipality"
-                      :value="municipality.id"
-                      checked="checkIfRegion(municipality.id)"
-                    /><span class="ml-2 text-gray-700">{{
-                      municipality.name
-                    }}</span>
+                      v-model="selectedRegion"
+                      :value="region.id"
+                      checked="checkIfRegion(region.id)"
+                    /><span class="ml-2 text-gray-700">{{ region.name }}</span>
                   </label>
                 </div>
               </div>
@@ -140,10 +135,10 @@ export default {
   },
   data() {
     return {
-      municipalities: [],
+      regions: [],
       shops: [],
       products: [],
-      selectedMunicipality: [],
+      selectedRegion: [],
       selectedProduct: [],
       page: 1,
       total: 0,
@@ -184,13 +179,13 @@ export default {
           });
         });
     },
-    loadMunicipalities() {
-      db.collection("municipalities")
+    loadRegions() {
+      db.collection("regions")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             let municipality = doc.data();
-            this.municipalities.push(municipality);
+            this.regions.push(municipality);
           });
         });
     },
@@ -221,20 +216,20 @@ export default {
   },
   mounted() {
     this.loadShops();
-    this.loadMunicipalities();
+    this.loadRegions();
     this.loadProducts();
     this.loadUserMunicipalitie();
   },
   computed: {
     filteredShops: function () {
       if (
-        this.selectedMunicipality.length === 0 &&
+        this.selectedRegion.length === 0 &&
         this.selectedProduct.length === 0
       ) {
         return this.shops;
       } else if (
         this.selectedProduct.length != 0 &&
-        this.selectedMunicipality.length != 0
+        this.selectedRegion.length != 0
       ) {
         return this.shops
           .filter((item) => {
@@ -242,17 +237,17 @@ export default {
               return this.selectedProduct.includes(item.id);
             });
           })
-          .filter((item) => this.selectedMunicipality.includes(item.region_id));
+          .filter((item) => this.selectedRegion.includes(item.region_id));
       } else if (
         this.selectedProduct.length === 0 &&
-        this.selectedMunicipality.length > 0
+        this.selectedRegion.length > 0
       ) {
         return this.shops.filter((item) =>
-          this.selectedMunicipality.includes(item.region_id)
+          this.selectedRegion.includes(item.region_id)
         );
       } else if (
         this.selectedProduct.length != 0 &&
-        this.selectedMunicipality.length === 0
+        this.selectedRegion.length === 0
       ) {
         return this.shops.filter((item) => {
           return item.products.some((item) => {

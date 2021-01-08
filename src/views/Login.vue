@@ -101,7 +101,7 @@ export default {
 
 <style>
 .background-image {
-  background-image: url("../assets/background-login-register.jpg");
+  background-image: url("../assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

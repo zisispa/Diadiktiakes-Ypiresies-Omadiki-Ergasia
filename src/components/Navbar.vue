@@ -105,7 +105,7 @@
                 class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium uppercase"
                 to="/signup"
                 v-if="!isLoggedIn"
-                >Εγγραφη</router-link
+                >Γινε Μελος</router-link
               >
             </div>
           </div>
@@ -177,7 +177,7 @@
           v-if="!isLoggedIn"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
           to="/signup"
-          >Εγγραφη</router-link
+          >Γινε Μελος</router-link
         >
       </div>
     </div>
